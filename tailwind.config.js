@@ -29,6 +29,7 @@ export default {
     colors: {
       white: "#FFFFFF",
       gray: "#999999",
+      darkGray: "#333333",
       black: "#000000",
       success: "#00A550",
       alert: "#F1C40F",

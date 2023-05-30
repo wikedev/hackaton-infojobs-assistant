@@ -5,7 +5,7 @@ export default function Ideas({ options, handleRequest }: { options: string[], h
         
           {options.map((option, index) => {
             return (  
-                <div key={index} className="text-gray p-2 rounded-md hover:bg-primaryLight active:text-accent active:bg-accentLight" onClick={() => handleRequest(option)}>{option}</div>           
+                <div key={index} className="text-gray p-2 rounded-md hover:bg-primaryLight hover:text-darkGray active:text-accent active:bg-accentLight" onClick={() => handleRequest(option)}>{option}</div>           
             )
           })}
       

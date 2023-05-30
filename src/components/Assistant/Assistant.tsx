@@ -3,15 +3,16 @@ import Input from '../Input/Input'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
 import Ideas from '../Ideas/Ideas'
 import AiResponse from '../AiResponse/AiResponse'
-import { useState } from 'react'
-// import { getAi } from '../../services/getOpenAi'
+import {  useState } from 'react'
+import { getAi } from '../../services/getOpenAi.ts'
+
+import {getInfoJobsOffers} from '../../services/getOffers.ts'
 
 export default function Assistant() {
-  //To remove 
-  const sampleResponse = " Aquí"// tienes una lista escueta de algunos trabajos de jornadaquí tienes una lista escueta de algunos trabajos de jornadaquí tienes una lista escueta de algunos trabajos de jornadaquí tienes una lista escueta de algunos trabajos de jornadaquí tienes una lista escueta de algunos trabajos de jornadaquí tienes una lista escueta de algunos trabajos de jornadaquí tienes una lista escueta de algunos trabajos de jornadaquí tienes una lista escueta de algunos trabajos de jornadaquí tienes una lista escueta de algunos trabajos de jornadaquí tienes una lista escueta de algunos trabajos de jornadaquí tienes una lista escueta de algunos trabajos de jornadaquí tienes una lista escueta de algunos trabajos de jornadaquí tienes una lista escueta de algunos trabajos de jornada completa más demandados:\n\nDesarrollador de software  Enfermero/a\nIngeniero/a de datos\nAnalista financiero\nGerente de ventas\nIngeniero/a de software\nEspecialista en marketing digital\nContador/a\nAnalista de datos\nGerente de proyectos\n"
 
+  
   const [request, setRequest] = useState("")
-  const [response, setResponse] = useState(sampleResponse)
+  const [response, setResponse] = useState("-")
   const [engineProfile, setEngineProfile] =  useState("Encontrar empleo")
 
   const engineProfiles = [
@@ -42,16 +43,26 @@ export default function Assistant() {
     
     }
 
-    console.log(ideas[engineProfile])
+  
 
   const handleGPT = () => {
-  //   getAi(request).then((res) => {
+    setResponse("cargando...")
 
-  //     console.log(res)
-  //     // setResponse(res)
+    getInfoJobsOffers().then((res:any) => {
+      console.log(res)
+      const json = JSON.parse(res)
+      const a = json.data[0].attributes.description
+      setRequest(a)
+    })
 
-  //   })
-  setResponse(sampleResponse)
+
+
+    getAi(request).then((res:any) => {
+      const json = JSON.parse(res)
+      setResponse(json.choices[0].message.content)
+
+    })
+    
   }
 
   return (
