@@ -3,7 +3,7 @@ export async function getAi(context: string[], description: string) {
 	myHeaders.append('Content-Type', 'application/json')
 	myHeaders.append(
 		'Authorization',
-		'Bearer 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',
+		'Bearer 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',
 	) // this secret have 72 hours of life and is restricted to use
 
 	var raw = JSON.stringify({
