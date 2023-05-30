@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-// import './index.css'
-
+import './index.css'
 const rootElement = document.createElement("div");
-// document.body.appendChild(rootElement);
+
+// Comment on build
+document.body.appendChild(rootElement);
 
 ReactDOM.createRoot(rootElement as HTMLElement).render(
   <React.StrictMode>
