@@ -29,19 +29,13 @@ export async function getCV(id: string) {
 		id: id + 34,
 		code: '26DBE83E-3048-3952-A401E8D782ACB1C8',
 		name: 'Curriculum 1',
-		principal: true,
-		completed: true,
 		incompleteSteps: ['education', 'experience'],
-
 		educations: [
 			{
 				id: 14826429040,
 				educationLevelCode: 'otros-titulos',
 				courseName: 'Some other course',
 				finishingDate: '2012-10-01',
-				stillEnrolled: false,
-				institutionName: 'Broward Community College',
-				hideEducation: false,
 			},
 			{
 				id: 9248429800,
@@ -49,9 +43,6 @@ export async function getCV(id: string) {
 				courseCode: 'actividades-agrarias',
 				startingDate: '2005-10-01',
 				finishingDate: '2006-11-01',
-				stillEnrolled: false,
-				institutionName: 'Centro',
-				hideEducation: false,
 			},
 			{
 				id: 9248429800,
@@ -59,31 +50,23 @@ export async function getCV(id: string) {
 				courseCode: 'actividades-agrarias',
 				startingDate: '2005-10-01',
 				finishingDate: '2006-11-01',
-				stillEnrolled: false,
-				institutionName: 'Centro',
-				hideEducation: false,
 			},
 		],
 
 		experiencia: {
-			id: '',
 			company: 'InfoJobs',
 			trabajo: 'Web programmer',
 			descripcion:
 				'Programming as a web developer in several languages like Java, Javascript, HTML, SQL, ...',
 			fechaInicio: '2006-09-14',
 			finaFinal: '2011-06-14',
-			onCourse: 'false',
 			sector: 'servicios-de-ti',
 			level: 'especialista',
-			staff: '1-5',
 			category: 'informatica-telecomunicaciones',
 			subcategories: ['arquitectura', 'programacion', 'gestion-proyectos'],
-			hideSalary: 'false',
-			salariominimo: '18.000',
-			salarionmaximo: '24.000',
+			salario_minimo: '18.000',
+			salarion_maximo: '24.000',
 			salaryPeriod: 'bruto-ano',
-			visible: 'false',
 		},
 	}
 
@@ -429,145 +412,8 @@ export async function getOfferDescriptionById(id: string) {
 
 	const data = {
 		title: 'Adjunto Responsable de Tienda y Colaboradores',
-		id: id,
-		state: 1,
-		creationDate: '2012-03-13T23:00:00.000+0000',
-		updateDate: '2012-03-14T08:43:36.000+0000',
-		city: 'Fuenlabrada',
-		externalUrlForm: '',
-		blocked: true,
-		applications: 0,
-		province: {
-			id: 33,
-			value: 'Madrid',
-		},
-		experienceMin: {
-			id: 6,
-			value: 'Al menos 2 años',
-		},
-		category: {
-			id: 10,
-			value: 'Administración de empresas',
-		},
-		subcategories: [
-			{
-				id: 3000,
-				value: 'Administración',
-				order: 20,
-				key: 'administracion',
-				parent: 10,
-			},
-		],
-		studiesMin: {
-			id: 120,
-			value: 'Ingeniero Técnico',
-		},
-		residence: {
-			id: 0,
-			value: '(Seleccionar)',
-		},
-		country: {
-			id: 17,
-			value: 'España',
-		},
-		contractType: {
-			id: 1,
-			value: 'Indefinido',
-		},
-		journey: {
-			id: 1,
-			value: 'Completa',
-		},
-		profile: {
-			id: '659ee7e1-c456-4db6-980c-ed19a94eab0d',
-			name: 'Empresa ejemplo',
-			description:
-				'Somos una empresa multinacional alemana líder en el sector de la distribución con más de 3.500 tiendas en Europa.',
-			province: {
-				id: 9,
-				value: 'Barcelona',
-			},
-			numberWorkers: 3000,
-			url: '',
-			corporateWebsiteUrl:
-				'/gen/multisite-ij.xhtml?iCodigoPerfil=659ee7e1-c456-4db6-980c-ed19a94eab0d&perfil=empresa-oculta',
-			websiteUrl: '',
-			hidden: true,
-			typeIndustry: {
-				id: 75,
-				value: 'Ingeniería',
-			},
-			country: {
-				id: 17,
-				value: 'España',
-			},
-			corporateResponsive: false,
-			showCorporativeHeader: false,
-			clientId: 2391690986,
-		},
-		cityPD: 3506,
-		zipCode: '08800',
-		latitude: 41.608213,
-		longitude: 2.287789,
-		exactLocation: false,
-		department: '',
-		vacancies: 1,
-		minRequirements: '',
-		description:
-			'En dependencia del Responsable de Zona, el candidato a ADJUNTO DE RESPONSABLE DE TIENDA se responsabilizará de alcanzar en su tienda la mayor cifra de ventas y rentabilidad posibles.',
-		desiredRequirements:
-			'- Alto grado de responsabilidad y autonomía.\n- Capacidad de decisión y trabajo.',
-		commissions: '',
-		contractDuration: '',
-		referenceId: '',
-		detailedStudiesId: -11,
-		studying: false,
-		showPay: true,
-		maxPay: {
-			amount: 27000,
-			amountId: 275,
-			periodId: 3,
-			periodValue: 'Bruto/año',
-			amountValue: '27.000 €',
-		},
-		minPay: {
-			amount: 24000,
-			amountId: 270,
-			periodId: 3,
-			periodValue: 'Bruto/año',
-			amountValue: '24.000 €',
-		},
-		schedule: '',
-		jobLevel: {
-			id: 3,
-			value: 'Especialista',
-		},
-		staffInCharge: {
-			id: 3,
-			value: '6 - 10',
-		},
-		hasKillerQuestions: 0,
-		hasOpenQuestions: 0,
-		upsellings: {
-			highlightColor: true,
-			highlightUrgent: true,
-			highlightHomeMonth: false,
-			highlightHomeWeek: false,
-			highlightSubcategory: false,
-			highlightLogo: false,
-			highlightStandingOffer: false,
-		},
-		link:
-			'http://www.infojobs.net/fuenlabrada/oferta-multi-color-oculta/of-i8e55718e6d4282979b59a20017186d',
-		active: true,
-		archived: false,
-		deleted: false,
-		disponibleForFullVisualization: true,
-		availableForVisualization: true,
-		subsegment: 23,
-		skillsList: ['Java', 'JSP'],
-		epreselec: true,
-		fiscalAddress: 'C/. XXXX, 28XXX Madrid, MADRID, España',
+
+		fiscalAddress: 'C/. XXXX, 28XXX Madrid, MADRID, España' + id,
 	}
 	return data
 }
@@ -577,8 +423,6 @@ export async function getProfile(id: string) {
 		perfil: {
 			id: id,
 			email: 'candidate@domain.net',
-			emailHash: 'XXXXX',
-			key: 'fbbef308-198c-4723-b6ca-a16c916dxxx5',
 			hasPhoto: true,
 			photo:
 				'http://www.infojobs.net/candidato.foto?id_candidato=31959971-de9f-47e1-8a12-1d83224axxxx',
@@ -587,37 +431,22 @@ export async function getProfile(id: string) {
 			surname2: 'Tur',
 			fullName: 'Hermenegildo Pi Tur',
 			city: 'Barcelona Capital',
-			province: {
-				id: 9,
-				value: 'Barcelona',
-			},
-			publicProfileLink: '',
-			status: 0,
-			validatedMail: 1,
+			province: 'Barcelona',
 			accountCreation: '2007-09-03T21:49:27.000+0000',
 			lastCVUpdate: '2020-10-23T09:15:10.000+0000',
 			lastInscripcion: '2020-05-22T10:30:48.000+0000',
-			extendedBannerAttributes:
-				'&oasUserCategory=150&null=1&oasEmploymentStatus=2...',
-			subSegment: 'executive',
-			doesNotWantNotifications: false,
-			photoAccepted: true,
 			skills: [
 				{
 					id: 172788035,
 					name: 'Desarrollo cliente-servidor',
 					type: 'expertise',
-					order: 172788035,
 					key: 'desarrollo-cliente-servidor',
-					deprecated: false,
 				},
 				{
 					id: 172788097,
 					name: 'Arquitectura de Software',
 					type: 'expertise',
-					order: 172788097,
 					key: 'arquitectura-de-software',
-					deprecated: true,
 				},
 			],
 
@@ -626,22 +455,14 @@ export async function getProfile(id: string) {
 					id: 13,
 					name: 'Idiomas',
 					order: 13,
-					type: 0,
-					parentCategoryId: 0,
 					subcategories: [
 						{
 							id: 1301,
 							name: 'Dominio de idiomas',
-							order: 1301,
-							parentCategoryId: 13,
-							subcategories: [],
 						},
 						{
 							id: 1302,
 							name: 'Traducción e interpretación',
-							order: 1302,
-							parentCategoryId: 13,
-							subcategories: [],
 						},
 					],
 				},

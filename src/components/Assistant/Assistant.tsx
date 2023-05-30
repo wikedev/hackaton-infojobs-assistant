@@ -80,11 +80,14 @@ export default function Assistant() {
 		}
 
 		getAi(context, req).then((res: any) => {
-			const json = JSON.parse(res)
-			setResponse(json.choices[0].message.content || 'OPENAI ERROR')
+			try {
+				const json = JSON.parse(res)
+				setResponse(json.choices[0].message.content)
+			} catch (e) {
+				setResponse('OPENAI ERROR TOKEN')
+			}
 		})
 	}
-
 	return (
 		<div className="sm:max-w-wk-sm md:max-w-wk-md  lg:max-w-wk-lg xl:max-w-wk-xl sm:max-h-wk-sm md:max-h-wk-md  lg:max-h-wk-lg xl:max-h-wk-xl content-center ">
 			<div className="w-screen min-w-max sm:max-w-wk-sm md:max-w-wk-md  lg:max-w-wk-lg xl:max-w-wk-xl sm:max-h-wk-sm md:max-h-wk-md  lg:max-h-wk-lg xl:max-h-wk-xl content-center">
