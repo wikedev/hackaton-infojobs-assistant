@@ -1,26 +1,29 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-import './index.css'
+// import './index.css'
 
 const rootElement = document.createElement("div");
-rootElement.id = "waka";
-document.body.appendChild(rootElement);
+// document.body.appendChild(rootElement);
 
 ReactDOM.createRoot(rootElement as HTMLElement).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
 )
+// rootElement.remove();
 
-// console.log(a)
-const searchBox = document.querySelector(".ij-SearchBox");//document.querySelector(".search-box");
-// const offers = document.querySelector(".ij-List");
-
+const searchBox = document.querySelector(".ij-Container-container");//document.querySelector(".search-box");
 if(searchBox !== null){
-  searchBox.removeChild(searchBox.childNodes[0]);
+  console.log(searchBox.childNodes)
+  // searchBox.removeChild(searchBox.childNodes[0]);
+  searchBox.removeChild(searchBox.childNodes[3]);
+  searchBox.removeChild(searchBox.childNodes[2]);
+  searchBox.removeChild(searchBox.childNodes[1]);
   searchBox.appendChild(rootElement);
 
 }
 
-// offers.remove();
+// const offers = document.querySelector(".ij-List");
+// if(offers !== null)
+//   offers.remove();

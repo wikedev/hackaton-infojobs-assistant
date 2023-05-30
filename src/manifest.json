@@ -5,7 +5,7 @@
 
   "content_scripts": [{
       "js": ["main.tsx"],
-      "matches": ["https://www.infojobs.net/*"]
+      "matches": ["https://www.infojobs.net/candidate/my-infojobs.xhtml*"]
   }],
   "action": {},
   "permissions": [
