@@ -1,7 +1,4 @@
 # Use Infojobs on your professional lifecycle
-Welcome to the infojobs assistant repository!
-This assistant is to offer tools and resources to continue growing professionally.
-
 Once Infojobs has served its purpose of finding employment, the user's activity is significantly reduced. And this assistant helps you in all working lifecycle
 
 ##  Objectives
