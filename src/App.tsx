@@ -1,11 +1,8 @@
 import './App.css'
-import  Assistant  from './components/Assistant/Assistant'
+import Assistant from './components/Assistant/Assistant'
 
 function App() {
-  
-  return (
-      <Assistant />
-  )
+	return <Assistant />
 }
 
 export default App

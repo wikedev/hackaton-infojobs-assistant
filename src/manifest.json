@@ -2,15 +2,19 @@
   "name": "Advanced Service Worker",
   "version": "1.0",
   "manifest_version": 3,
-
-  "content_scripts": [{
-      "js": ["main.tsx"],
-      "matches": ["https://www.infojobs.net/candidate/my-infojobs.xhtml*"]
-  }],
+  "content_scripts": [
+    {
+      "js": [
+        "main.tsx"
+      ],
+      "matches": [
+        "https://www.infojobs.net/candidate/my-infojobs.xhtml*"
+      ]
+    }
+  ],
   "action": {},
   "permissions": [
-      "scripting",
-      "activeTab"
+    "scripting",
+    "activeTab"
   ]
-
 }

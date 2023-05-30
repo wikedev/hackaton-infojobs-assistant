@@ -1,0 +1,23 @@
+{
+    "name": "Advanced Service Worker",
+    "version": "1.0",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+            "js": [
+                "main.js"
+            ],
+            "matches": [
+                "https://www.infojobs.net/candidate/my-infojobs.xhtml*"
+            ],
+            "css": [
+                "main.7bed08fa.css"
+            ]
+        }
+    ],
+    "action": {},
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ]
+}
