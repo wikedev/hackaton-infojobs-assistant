@@ -23,3 +23,13 @@ Once Infojobs has served its purpose of finding employment, the user's activity 
 - Accessing infojobs API data
 - Defining results with openAI
 - Anticipating your needs
+
+
+# How to build and install
+- download repo
+- npm install on terminal
+- add OPENAI_TOKEN on .env file
+- npm run build
+- go to "chrome://extensions" on chrome
+- activate developer mode on the right corner
+- load unpacked and select dist folder inside of project
