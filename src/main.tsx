@@ -13,8 +13,6 @@ ReactDOM.createRoot(rootElement as HTMLElement).render(
   </React.StrictMode>,
 )
 
-
-console.log("!Wike.dev");
 // console.log(a)
 const searchBox = document.querySelector(".ij-SearchBox");//document.querySelector(".search-box");
 // const offers = document.querySelector(".ij-List");

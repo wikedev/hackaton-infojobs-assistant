@@ -1,8 +1,5 @@
-import React from 'react'
 
-export default function ButtonGroup({ options, selection, handleSelection }) {
-  if (!options) return
-
+export default function ButtonGroup({ options, selection, handleSelection }: { options: string[], selection: string, handleSelection: Function }) {
 
   return (
     <div className=' border-primary border rounded-md'>

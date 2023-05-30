@@ -1,6 +1,4 @@
-import React from 'react'
-
-export default function Ideas({ options, handleRequest }) {
+export default function Ideas({ options, handleRequest }: { options: string[], handleRequest: Function }) {
   return (
     <div className='pl-4 pb-4 h-full'>
       <div className='bg-white p-2 rounded-xl text-black h-full'>

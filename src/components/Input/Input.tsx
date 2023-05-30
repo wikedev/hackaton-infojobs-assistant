@@ -1,6 +1,5 @@
-import React from 'react'
 
-export default function Input({ request, handleRequest, handleGPT }) {
+export default function Input({ request, handleRequest, handleGPT }: { request: string, handleRequest: Function, handleGPT: Function }) {
   return (
     <div className='p-12'>
 

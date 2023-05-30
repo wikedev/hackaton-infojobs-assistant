@@ -1,19 +1,18 @@
-import React from 'react'
 import Title from '../Title/Title'
 import Input from '../Input/Input'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
 import Ideas from '../Ideas/Ideas'
 import AiResponse from '../AiResponse/AiResponse'
-import { useEffect } from 'react'
-import { getAi } from '../../services/getOpenAi'
+import { useState,useEffect } from 'react'
+// import { getAi } from '../../services/getOpenAi'
 
 export default function Assistant() {
   //To remove 
   const sampleResponse = " Aquí tienes una lista escueta de algunos trabajos de jornada completa más demandados:\n\nDesarrollador de software  Enfermero/a\nIngeniero/a de datos\nAnalista financiero\nGerente de ventas\nIngeniero/a de software\nEspecialista en marketing digital\nContador/a\nAnalista de datos\nGerente de proyectos\n"
 
-  const [request, setRequest] = new React.useState("")
-  const [response, setResponse] = new React.useState(sampleResponse)
-  const [engineProfile, setEngineProfile] = new React.useState("Encontrar empleo")
+  const [request, setRequest] = useState("")
+  const [response, setResponse] = useState(sampleResponse)
+  const [engineProfile, setEngineProfile] =  useState("Encontrar empleo")
 
   const engineProfiles = [
     "Encontrar empleo",
@@ -37,12 +36,13 @@ export default function Assistant() {
 
 
   const handleGPT = () => {
-    getAi(request).then((res) => {
+  //   getAi(request).then((res) => {
 
-      console.log(res)
-      // setResponse(res)
+  //     console.log(res)
+  //     // setResponse(res)
 
-    })
+  //   })
+  setResponse(sampleResponse)
   }
 
   return (
