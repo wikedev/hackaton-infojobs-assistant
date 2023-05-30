@@ -19,6 +19,10 @@ Once Infojobs has served its purpose of finding employment, the user's activity 
 - Identify requirements that are typically requested and you don't have
 - See what new skills or requirements are starting to be demanded
 
+<p align="center">
+    <img src="https://i.ibb.co/r6S7Lw3/Screenshot-2023-05-30-at-23-34-29.png" width="100%" alt="Banner" />
+</p>
+
 ## And how does it?
 - Accessing infojobs API data
 - Defining results with openAI
