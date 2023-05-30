@@ -6,19 +6,19 @@ import AiResponse from '../AiResponse/AiResponse'
 import {  useState } from 'react'
 import { getAi } from '../../services/getOpenAi.ts'
 
-import {getInfoJobsOffers} from '../../services/getOffers.ts'
+import {getCV, getInfoJobsOffers, getProfile,getOfferDescriptionById} from '../../services/getInfojobs.ts'
 
 export default function Assistant() {
 
   
   const [request, setRequest] = useState("")
-  const [response, setResponse] = useState("-")
+  const [response, setResponse] = useState("ʕ•́ᴥ•̀ʔっ")
   const [engineProfile, setEngineProfile] =  useState("Encontrar empleo")
 
   const engineProfiles = [
     "Encontrar empleo",
     "Cambiar empleo",
-    "Mejorar empleo"
+    "Mejorar empleo",
   ]
 
   interface Ideas {
@@ -28,11 +28,12 @@ export default function Assistant() {
 
   const ideas:Ideas = {
     "Encontrar empleo":[
-      "Compara mi CV con las ofertas actuales",
-      "¿Qué puedo hacer para mejorar mi perfil",
+      "Que falta en mi curriculum",
+      "¿Qué puedo hacer para mejorar mi perfil?",
       "Trabajos a media jornada mas demandados", 
     ],
     "Cambiar empleo":[
+      "Que cambiar del curriculum",
       "Ciudades con mejores ofertas",
       "Sueldos medios en mi sector",
     ],
@@ -45,26 +46,46 @@ export default function Assistant() {
 
   
 
-  const handleGPT = () => {
-    setResponse("cargando...")
+  const handleGPT =  async () => {
+    setResponse("cargando datos...")
 
-    getInfoJobsOffers().then((res:any) => {
-      console.log(res)
-      const json = JSON.parse(res)
-      const a = json.data[0].attributes.description
-      setRequest(a)
-    })
+    // need authorization to get that information and access (mocked)
+    const id = "5f9b2basdfagg"
 
 
+    const profile = await getProfile(id)
+    const CV = await getCV(id)
 
-    getAi(request).then((res:any) => {
+    const infoJobsOffers = await getInfoJobsOffers( id)
+    const individualOffer= await getOfferDescriptionById(id)
+
+
+    const context = [JSON.stringify(profile), JSON.stringify(CV), JSON.stringify(infoJobsOffers), JSON.stringify(individualOffer)]
+   
+    setResponse("procesando...")
+
+
+let req 
+if(engineProfile == "Encontrar empleo"){
+  req = "busco trabajo. "+request
+}else if(engineProfile == "Cambiar empleo"){
+  req = "trabajo de "+CV.experiencia.trabajo+" y quiero cambiar. "+request
+}else if(engineProfile == "Mejorar empleo"){
+  req = "trabajo de "+CV.experiencia.trabajo+" "+request
+}else{
+  req = request
+}
+  
+
+
+
+    getAi(context, req).then((res:any) => {
       const json = JSON.parse(res)
       setResponse(json.choices[0].message.content)
 
     })
-    
   }
-
+  
   return (
     <div className='sm:max-w-wk-sm md:max-w-wk-md  lg:max-w-wk-lg xl:max-w-wk-xl sm:max-h-wk-sm md:max-h-wk-md  lg:max-h-wk-lg xl:max-h-wk-xl content-center '>
 
